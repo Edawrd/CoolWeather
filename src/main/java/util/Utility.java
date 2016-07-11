@@ -34,8 +34,8 @@ public class Utility {
     public static boolean handleCitiesResponse(CoolWeatherDB coolWeatherDB, String response, int provinceId) {
         if (!TextUtils.isEmpty(response)) {
             String[] allCities = response.split(",");
-            for (String c : allCities) {
-                if (allCities != null && allCities.length > 0) {
+            if (allCities != null && allCities.length > 0) {
+                for (String c : allCities) {
                     String[] array = c.split("\\|");
                     City city = new City();
                     city.setCityCode(array[0]);

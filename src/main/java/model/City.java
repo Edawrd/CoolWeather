@@ -4,17 +4,17 @@ package model;
  * Created by Edward on 2016/6/30.
  */
 public class City {
-    private int cityId;
+    private int id;
     private String cityName;
     private String cityCode;
     private int provinceId;
 
-    public int getCityId() {
-        return cityId;
+    public int getId() {
+        return id;
     }
 
-    public void setCityId(int cityId) {
-        this.cityId = cityId;
+    public void setId(int cityId) {
+        this.id = cityId;
     }
 
     public String getCityCode() {

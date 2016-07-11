@@ -40,7 +40,7 @@ public class ChooseAreaActivity extends Activity {
     private ListView listView;
     private ArrayAdapter<String> adapter;
     private CoolWeatherDB coolWeatherDB;
-    private List<String> dataList = new ArrayList<String>();
+    private List<String> dataList = new ArrayList<String>(); 
     //省列表
     private List<Province> provinceList;
     //市列表
@@ -116,7 +116,7 @@ public class ChooseAreaActivity extends Activity {
 
     /*查询选中城市内所有的县，优先从数据库查询，如果没有查询到再去服务器上查询*/
     private void queryCounties(){
-        countyList = coolWeatherDB.loadCounties(selectedCity.getCityId());
+        countyList = coolWeatherDB.loadCounties(selectedCity.getId());
         if (countyList.size()>0){
             dataList.clear();
             for (County county:countyList){
@@ -149,7 +149,7 @@ public class ChooseAreaActivity extends Activity {
                 }else if ("city".equals(type)){
                     result = Utility.handleCitiesResponse(coolWeatherDB,response,selectedProvince.getId());
                 }else if ("county".equals(type)){
-                    result = Utility.handleCountiesResponse(coolWeatherDB,response,selectedCity.getCityId());
+                    result = Utility.handleCountiesResponse(coolWeatherDB,response,selectedCity.getId());
                 }
                 if (result){
                     //通过runOnUiThread()方法回到主线程处理逻辑
